@@ -11,9 +11,9 @@ import com.example.adfmp1h21_bird.R
 
 class BaseFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = BaseFragment()
-    }
+//    companion object {
+//        fun newInstance() = BaseFragment()
+//    }
 
     private lateinit var viewModel: BaseViewModel
 

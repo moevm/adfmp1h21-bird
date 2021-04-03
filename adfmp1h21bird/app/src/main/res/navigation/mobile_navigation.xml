@@ -29,4 +29,9 @@
         android:label="@string/menu_statistics"
         tools:layout="@layout/fragment_statistics" />
 
+    <fragment
+        android:id="@+id/nav_exit"
+        android:name="com.example.adfmp1h21_bird.ui.exit.ExitFragment"
+        android:label="@string/menu_exit"
+        tools:layout="@layout/fragment_exit" />
 </navigation>
