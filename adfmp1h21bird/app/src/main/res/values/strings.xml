@@ -30,6 +30,13 @@
     <string name="base_point">-</string>
     <string name="base_header">Список данных из базы знаний:</string>
 
+    <string name="settings_geotag">Автоматическое добавление геометок</string>
+    <string name="settings_cleat_statistics">Очистка статистики</string>
+    <string name="settings_btn_cleat_statistics">Очистить</string>
+    <string name="settings_login">Логин пользователя</string>
+    <string name="settings_password">Пароль пользователя</string>
+    <string name="settings_btn_save">Сохранить</string>
+
 
     <string-array name="temp_db">
         <item>Факт 1</item>
