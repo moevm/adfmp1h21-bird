@@ -37,6 +37,7 @@
     <string name="settings_password">Пароль пользователя</string>
     <string name="settings_btn_save">Сохранить</string>
     <string name="home_desc">Добавить запись</string>
+    <string name="home_item_img_decs">Птица</string>
 
 
     <string-array name="temp_db">
