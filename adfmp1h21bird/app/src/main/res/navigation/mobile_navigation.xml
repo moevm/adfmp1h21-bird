@@ -34,4 +34,9 @@
         android:name="com.example.adfmp1h21_bird.ui.exit.ExitFragment"
         android:label="@string/menu_exit"
         tools:layout="@layout/fragment_exit" />
+    <fragment
+        android:id="@+id/nave_create_page"
+        android:name="com.example.adfmp1h21_bird.ui.create_page.CreatePageFragment"
+        android:label="@string/page_create"
+        tools:layout="@layout/fragment_create_page" />
 </navigation>

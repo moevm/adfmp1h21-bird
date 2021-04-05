@@ -9,11 +9,11 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.adfmp1h21_bird.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 
 class HomeFragment : Fragment(), OnBirdClickListener {
 
@@ -43,9 +43,9 @@ class HomeFragment : Fragment(), OnBirdClickListener {
 //        })
 
         val fab: FloatingActionButton = rootView.findViewById(R.id.home_fab)
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+        fab.setOnClickListener {
+            val navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
+            navController.navigate(R.id.nave_create_page)
         }
 
         return rootView
