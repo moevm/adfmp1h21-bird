@@ -9,7 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.adfmp1h21_bird.R
@@ -44,7 +44,7 @@ class HomeFragment : Fragment(), OnBirdClickListener {
 
         val fab: FloatingActionButton = rootView.findViewById(R.id.home_fab)
         fab.setOnClickListener {
-            val navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
+            val navController = findNavController()
             navController.navigate(R.id.nave_create_page)
         }
 

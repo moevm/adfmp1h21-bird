@@ -38,6 +38,16 @@
     <string name="home_desc">Добавить запись</string>
     <string name="home_item_img_decs">Птица</string>
     <string name="page_create">Добавление заметки</string>
+    <string name="set_geotag">Автоматический геотег</string>
+    <string name="set_geotag_sum">Автоматически добавляет геометку к заметке</string>
+    <string name="set_clear_stat">Сброс статистики</string>
+    <string name="set_clear_stat_sum">Нажмите чтобы очистить вашу статистику приложения</string>
+    <string name="set_cat1">Настройки приложения</string>
+    <string name="set_cat2">Настройки аккаунта</string>
+    <string name="set_login">Изменить логин</string>
+    <string name="set_password">Изменить пароль</string>
+    <string name="set_login_sum">Для смены логина введите новый</string>
+    <string name="set_password_sum">Для смены пароля введите новый</string>
 
 
     <string-array name="temp_db">

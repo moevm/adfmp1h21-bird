@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/set_cat1">
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="geotag"
+            android:title="@string/set_geotag"
+            android:summary="@string/set_geotag_sum" />
+
+        <Preference
+            android:summary="@string/set_clear_stat_sum"
+            android:title="@string/set_clear_stat">
+
+            <intent android:action="android.intent.action.VIEW"
+                android:data="https://stackoverflow.com/questions/39953495/how-to-completely-uninstall-android-studio-from-windowsv10" />
+<!--            TODO переход к другой activity для удаления данных  -->
+<!--            <intent-->
+<!--                android:action="com.chikeandroid.settingsscreendemo.SETTING_START_ACTIVITY"-->
+<!--                android:targetClass="com.chikeandroid.settingsscreendemo.MyActivity"-->
+<!--                android:targetPackage="com.chikeandroid.settingsscreendemo" />-->
+
+        </Preference>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/set_cat2">
+
+
+        <EditTextPreference
+            android:defaultValue="Default value"
+            android:key="set_login"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/set_login"
+            android:summary="@string/set_login_sum"/>
+
+        <EditTextPreference
+            android:defaultValue="Default value"
+            android:key="@string/set_password"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/set_password"
+            android:summary="@string/set_password_sum"/>
+    </PreferenceCategory>
+</PreferenceScreen>
