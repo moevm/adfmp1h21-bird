@@ -44,8 +44,10 @@ class HomeFragment : Fragment(), OnNoteClickListener {
 
         val fab: FloatingActionButton = rootView.findViewById(R.id.note_fab)
         fab.setOnClickListener {
-            val navController = findNavController()
-            navController.navigate(R.id.nav_create_note)
+
+            val bundle = Bundle()
+            bundle.putBoolean("isNewNote", true)
+            findNavController().navigate(R.id.nav_update_note,bundle)
         }
 
         return rootView

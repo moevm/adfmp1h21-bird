@@ -25,7 +25,7 @@
             app:destination="@id/nav_note_page" />
         <action
             android:id="@+id/action_nav_home_to_nav_create_page"
-            app:destination="@id/nav_create_note" />
+            app:destination="@id/nav_update_note" />
         <action
             android:id="@+id/action_nav_home_to_nav_settings"
             app:destination="@id/nav_settings" />
@@ -55,10 +55,10 @@
         tools:layout="@layout/fragment_exit" />
 
     <fragment
-        android:id="@+id/nav_create_note"
-        android:name="com.example.adfmp1h21_bird.ui.create_note.CreateNoteFragment"
+        android:id="@+id/nav_update_note"
+        android:name="com.example.adfmp1h21_bird.ui.update_note.UpdateNoteFragment"
         android:label="@string/nav_note_create"
-        tools:layout="@layout/fragment_create_note" />
+        tools:layout="@layout/fragment_update_note" />
 
     <fragment
         android:id="@+id/nav_note_page"
@@ -66,12 +66,7 @@
         android:label="@string/nav_name_note"
         tools:layout="@layout/fragment_note" >
         <action
-            android:id="@+id/action_nav_note_page_to_nav_change_note"
-            app:destination="@id/nav_change_note" />
+            android:id="@+id/action_nav_note_page_to_nav_update_note"
+            app:destination="@id/nav_update_note" />
     </fragment>
-    <fragment
-        android:id="@+id/nav_change_note"
-        android:name="com.example.adfmp1h21_bird.ui.change_note.ChangeNoteFragment"
-        android:label="@string/nav_change_note"
-        tools:layout="@layout/fragment_change_note" />
 </navigation>

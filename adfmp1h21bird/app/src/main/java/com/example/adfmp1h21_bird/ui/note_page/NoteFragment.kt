@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatImageButton
@@ -46,7 +47,8 @@ class NoteFragment : Fragment() {
         fab_edit.setOnClickListener {
             val bundle = Bundle()
             bundle.putString("NoteID", NoteID)
-            findNavController().navigate(R.id.nav_change_note, bundle)
+            bundle.putBoolean("isNewNote", false)
+            findNavController().navigate(R.id.nav_update_note,bundle)
         }
 
         fab_share.setOnClickListener {
@@ -64,6 +66,7 @@ class NoteFragment : Fragment() {
         val tags: TextView = rootView.findViewById(R.id.note_tags_textView)
         val date: TextView = rootView.findViewById(R.id.note_date_textView)
         val comment: TextView = rootView.findViewById(R.id.note_comment_textView)
+        val image: ImageView = rootView.findViewById(R.id.note_imageView)
 
         val note:myNote = getData(NoteID)
         name.text = note.name
@@ -71,6 +74,7 @@ class NoteFragment : Fragment() {
         tags.text = note.tags
         date.text = note.date
         comment.text = note.comment
+        image.setImageResource(note.ImageId)
 
         val geotag_button: AppCompatImageButton = rootView.findViewById(R.id.note_geotag_button)
         geotag_button.setOnClickListener{

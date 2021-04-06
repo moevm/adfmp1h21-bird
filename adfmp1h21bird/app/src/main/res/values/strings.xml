@@ -39,9 +39,8 @@
     <string name="nav_name_base">База знаний</string>
     <string name="nav_name_settings">Настройки</string>
     <string name="nav_name_exit">Выход</string>
-    <string name="nav_note_create">Добавление заметки</string>
+    <string name="nav_note_create">Добавление/Изменение заметки</string>
     <string name="nav_name_note">Заметка</string>
-    <string name="nav_change_note">Изменение заметки</string>
 
     <!-- Строки фангмента base   -->
     <string name="base_point">-</string>
@@ -70,6 +69,15 @@
     <string name="note_tags">Теги</string>
     <string name="note_date">Дата</string>
     <string name="note_comment">Комментарий</string>
+
+    <!-- Строки фангмента update_note   -->
+    <string name="update_image_button"> Выбрать картинку</string>
+    <string name="update_name">Название</string>
+    <string name="update_geotag">Геотег</string>
+    <string name="update_tags">Теги</string>
+    <string name="update_date">Дата</string>
+    <string name="update_comment">Комментарий</string>
+    <string name="update_save_button">Сохранить заметку</string>
 
     <!--   base temp array   -->
     <string-array name="temp_db">
