@@ -1,11 +1,14 @@
 package com.example.adfmp1h21_bird.ui.note_page
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.widget.AppCompatImageButton
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -63,12 +66,24 @@ class NoteFragment : Fragment() {
         val comment: TextView = rootView.findViewById(R.id.note_comment_textView)
 
         val note:myNote = getData(NoteID)
-
         name.text = note.name
         geotag.text =note.geotag
         tags.text = note.tags
         date.text = note.date
         comment.text = note.comment
+
+        val geotag_button: AppCompatImageButton = rootView.findViewById(R.id.note_geotag_button)
+        geotag_button.setOnClickListener{
+            val gmmIntentUri = Uri.parse("geo:37.7749,-122.4194")
+            val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+            mapIntent.setPackage("com.google.android.apps.maps")
+//            mapIntent.resolveActivity(packageManager)?.let {
+//                startActivity(mapIntent)
+//            }
+
+            startActivity(mapIntent)
+
+        }
 
 
         return rootView
