@@ -4,8 +4,8 @@ import android.view.View
 
 class NoteRecyclerViewItem(val name:String,
                            var imageId:Int,
-                           val id:String,
-                           val tag: String) {
+                           val NoteId:String,
+                           val tags: String) {
 
     fun setNoteImage(NoteImageId: Int){
         this.imageId = NoteImageId

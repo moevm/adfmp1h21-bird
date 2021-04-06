@@ -65,6 +65,11 @@
 
     <!-- Строки фангмента note_page   -->
     <string name="note_fab_desc">Дополнительные действия</string>
+    <string name="note_name">Название</string>
+    <string name="note_geotag">Геотег</string>
+    <string name="note_tags">Теги</string>
+    <string name="note_date">Дата</string>
+    <string name="note_comment">Комментарий</string>
 
     <!--   base temp array   -->
     <string-array name="temp_db">

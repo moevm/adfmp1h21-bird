@@ -65,11 +65,11 @@ class HomeFragment : Fragment(), OnNoteClickListener {
     }
 
     override fun onNoteClick(v: View?, note: NoteRecyclerViewItem) {
-        Toast.makeText(v?.context, "You clicked ->"+ note.name +" with ID:"+note.id, Toast.LENGTH_SHORT).show()
+        Toast.makeText(v?.context, "You clicked ->"+ note.name +" with ID:"+note.NoteId, Toast.LENGTH_SHORT).show()
         // TODO Обработка нажатия на карточку
 
         val bundle = Bundle()
-        bundle.putString("NoteID",note.id)
+        bundle.putString("NoteID",note.NoteId)
         findNavController().navigate(R.id.nav_note_page, bundle)
     }
 

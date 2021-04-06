@@ -6,9 +6,10 @@
     <dimen name="nav_header_height">176dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
 
-
-
     <dimen name="standard_55">255dp</dimen>
     <dimen name="standard_105">2105dp</dimen>
     <dimen name="standard_155">2155dp</dimen>
+
+    <dimen name="font_size_h3">20sp</dimen>
+    <dimen name="font_size_p">14sp</dimen>
 </resources>
