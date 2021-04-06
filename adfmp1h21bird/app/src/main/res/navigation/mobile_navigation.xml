@@ -9,7 +9,27 @@
         android:id="@+id/nav_home"
         android:name="com.example.adfmp1h21_bird.ui.home.HomeFragment"
         android:label="@string/nav_name_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_nav_statistics"
+            app:destination="@id/nav_statistics" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_exit"
+            app:destination="@id/nav_exit"
+            app:enterAnim="@anim/nav_default_enter_anim" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_base"
+            app:destination="@id/nav_base" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_note_page"
+            app:destination="@id/nav_note_page" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_create_page"
+            app:destination="@id/nav_create_note" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_settings"
+            app:destination="@id/nav_settings" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_base"
@@ -35,7 +55,7 @@
         tools:layout="@layout/fragment_exit" />
 
     <fragment
-        android:id="@+id/nav_create_page"
+        android:id="@+id/nav_create_note"
         android:name="com.example.adfmp1h21_bird.ui.create_note.CreateNoteFragment"
         android:label="@string/nav_note_create"
         tools:layout="@layout/fragment_create_note" />
@@ -44,5 +64,14 @@
         android:id="@+id/nav_note_page"
         android:name="com.example.adfmp1h21_bird.ui.note_page.NoteFragment"
         android:label="@string/nav_name_note"
-        tools:layout="@layout/fragment_note" />
+        tools:layout="@layout/fragment_note" >
+        <action
+            android:id="@+id/action_nav_note_page_to_nav_change_note"
+            app:destination="@id/nav_change_note" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_change_note"
+        android:name="com.example.adfmp1h21_bird.ui.change_note.ChangeNoteFragment"
+        android:label="@string/nav_change_note"
+        tools:layout="@layout/fragment_change_note" />
 </navigation>

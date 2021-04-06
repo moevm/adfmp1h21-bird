@@ -42,10 +42,10 @@ class HomeFragment : Fragment(), OnNoteClickListener {
 //            textView.text = it
 //        })
 
-        val fab: FloatingActionButton = rootView.findViewById(R.id.home_fab)
+        val fab: FloatingActionButton = rootView.findViewById(R.id.note_fab)
         fab.setOnClickListener {
             val navController = findNavController()
-            navController.navigate(R.id.nav_create_page)
+            navController.navigate(R.id.nav_create_note)
         }
 
         return rootView
@@ -67,11 +67,10 @@ class HomeFragment : Fragment(), OnNoteClickListener {
     override fun onNoteClick(v: View?, note: NoteRecyclerViewItem) {
         Toast.makeText(v?.context, "You clicked ->"+ note.name +" with ID:"+note.id, Toast.LENGTH_SHORT).show()
         // TODO Обработка нажатия на карточку
-        val navController = findNavController()
 
         val bundle = Bundle()
         bundle.putString("NoteID",note.id)
-        navController.navigate(R.id.nav_note_page, bundle)
+        findNavController().navigate(R.id.nav_note_page, bundle)
     }
 
 }

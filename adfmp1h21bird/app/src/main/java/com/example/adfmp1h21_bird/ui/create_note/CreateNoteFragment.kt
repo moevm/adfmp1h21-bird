@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextClock
+import android.widget.TextView
 import com.example.adfmp1h21_bird.R
 
 class CreateNoteFragment : Fragment() {
@@ -23,6 +25,8 @@ class CreateNoteFragment : Fragment() {
         val rootView: View =  inflater.inflate(R.layout.fragment_create_note, container, false)
         viewModelCreate = ViewModelProvider(this).get(CreateNoteViewModel::class.java)
 
+        val textView:TextView = rootView.findViewById(R.id.create_text)
+        textView.text = "Create new note"
 
         return rootView
     }

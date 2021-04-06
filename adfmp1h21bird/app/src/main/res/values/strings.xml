@@ -41,6 +41,7 @@
     <string name="nav_name_exit">Выход</string>
     <string name="nav_note_create">Добавление заметки</string>
     <string name="nav_name_note">Заметка</string>
+    <string name="nav_change_note">Изменение заметки</string>
 
     <!-- Строки фангмента base   -->
     <string name="base_point">-</string>
@@ -62,6 +63,9 @@
     <string name="set_login_sum">Для смены логина введите новый</string>
     <string name="set_password_sum">Для смены пароля введите новый</string>
 
+    <!-- Строки фангмента note_page   -->
+    <string name="note_fab_desc">Дополнительные действия</string>
+
     <!--   base temp array   -->
     <string-array name="temp_db">
         <item>Факт 1</item>
@@ -74,5 +78,7 @@
         <item>Синие голуби</item>
         <item>Летающие страусы</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
