@@ -8,35 +8,41 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.adfmp1h21_bird.ui.home.HomeFragment"
-        android:label="@string/menu_home"
+        android:label="@string/nav_name_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_base"
         android:name="com.example.adfmp1h21_bird.ui.base.BaseFragment"
-        android:label="@string/menu_base"
+        android:label="@string/nav_name_base"
         tools:layout="@layout/fragment_base" />
 
     <fragment
         android:id="@+id/nav_settings"
         android:name="com.example.adfmp1h21_bird.ui.settings.SettingsFragment"
-        android:label="@string/menu_settings"
-        tools:layout="@layout/fragment_settings" />
+        android:label="@string/nav_name_settings" />
 
     <fragment
         android:id="@+id/nav_statistics"
         android:name="com.example.adfmp1h21_bird.ui.statics.StatisticsFragment"
-        android:label="@string/menu_statistics"
+        android:label="@string/nav_name_statistics"
         tools:layout="@layout/fragment_statistics" />
 
     <fragment
         android:id="@+id/nav_exit"
         android:name="com.example.adfmp1h21_bird.ui.exit.ExitFragment"
-        android:label="@string/menu_exit"
+        android:label="@string/nav_name_exit"
         tools:layout="@layout/fragment_exit" />
+
     <fragment
-        android:id="@+id/nave_create_page"
-        android:name="com.example.adfmp1h21_bird.ui.create_page.CreatePageFragment"
-        android:label="@string/page_create"
-        tools:layout="@layout/fragment_create_page" />
+        android:id="@+id/nav_create_page"
+        android:name="com.example.adfmp1h21_bird.ui.create_note.CreateNoteFragment"
+        android:label="@string/nav_note_create"
+        tools:layout="@layout/fragment_create_note" />
+
+    <fragment
+        android:id="@+id/nav_note_page"
+        android:name="com.example.adfmp1h21_bird.ui.note_page.NoteFragment"
+        android:label="@string/nav_name_note"
+        tools:layout="@layout/fragment_note" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.example.adfmp1h21_bird.ui.create_page
+package com.example.adfmp1h21_bird.ui.create_note
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -8,20 +8,20 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.adfmp1h21_bird.R
 
-class CreatePageFragment : Fragment() {
+class CreateNoteFragment : Fragment() {
 
 //    companion object {
 //        fun newInstance() = PageFragment()
 //    }
 
-    private lateinit var viewModelCreate: CreatePageViewModel
+    private lateinit var viewModelCreate: CreateNoteViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        val rootView: View =  inflater.inflate(R.layout.fragment_create_page, container, false)
-        viewModelCreate = ViewModelProvider(this).get(CreatePageViewModel::class.java)
+    ): View {
+        val rootView: View =  inflater.inflate(R.layout.fragment_create_note, container, false)
+        viewModelCreate = ViewModelProvider(this).get(CreateNoteViewModel::class.java)
 
 
         return rootView

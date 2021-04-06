@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">BÖRD</string>
+
+    <!-- Данные login and registration activity -->
     <string name="title_activity_login">LoginActivity</string>
     <string name="text_register">Регистрация</string>
     <string name="prompt_login">Логин</string>
@@ -16,25 +18,39 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="nav_header_title">BÖRD</string>
-    <string name="nav_header_subtitle">Имя пользователя</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <!-- Данные шапки меню -->
+    <string name="menu_header_title">BÖRD</string>
+    <string name="menu_header_subtitle">Имя пользователя</string>
+    <string name="menu_header_desc">Иконка приложения</string>
 
+    <!-- Названия пунктов меню -->
     <string name="menu_home">Галерея птичек</string>
     <string name="menu_statistics">Статистика</string>
     <string name="menu_base">База знаний</string>
     <string name="menu_settings">Настройки</string>
     <string name="menu_exit">Выход</string>
+
+    <!-- Заголовки списка опций -->
+    <string name="action_settings">Settings</string>
+
+    <!-- Заголовки фрагментов -->
+    <string name="nav_name_home">Галерея птичек</string>
+    <string name="nav_name_statistics">Статистика</string>
+    <string name="nav_name_base">База знаний</string>
+    <string name="nav_name_settings">Настройки</string>
+    <string name="nav_name_exit">Выход</string>
+    <string name="nav_note_create">Добавление заметки</string>
+    <string name="nav_name_note">Заметка</string>
+
+    <!-- Строки фангмента base   -->
     <string name="base_point">-</string>
     <string name="base_header">Список данных из базы знаний:</string>
 
-
+    <!-- Строки фангмента home   -->
     <string name="home_desc">Добавить запись</string>
     <string name="home_item_img_decs">Птица</string>
 
-    <string name="page_create">Добавление заметки</string>
-
+    <!-- Строки фангмента settings   -->
     <string name="set_geotag">Автоматический геотег</string>
     <string name="set_geotag_sum">Автоматически добавляет геометку к заметке</string>
     <string name="set_clear_stat">Сброс статистики</string>
@@ -46,7 +62,7 @@
     <string name="set_login_sum">Для смены логина введите новый</string>
     <string name="set_password_sum">Для смены пароля введите новый</string>
 
-
+    <!--   base temp array   -->
     <string-array name="temp_db">
         <item>Факт 1</item>
         <item>Факт 2</item>

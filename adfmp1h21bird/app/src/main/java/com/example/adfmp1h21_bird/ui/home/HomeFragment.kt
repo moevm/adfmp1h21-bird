@@ -15,10 +15,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.adfmp1h21_bird.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class HomeFragment : Fragment(), OnBirdClickListener {
+class HomeFragment : Fragment(), OnNoteClickListener {
 
     private lateinit var homeViewModel: HomeViewModel
-    private lateinit var birdItemList: List<BirdRecyclerViewItem>
+    private lateinit var noteItemList: List<NoteRecyclerViewItem>
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,13 +28,13 @@ class HomeFragment : Fragment(), OnBirdClickListener {
         homeViewModel =  ViewModelProvider(this).get(HomeViewModel::class.java)
         val rootView = inflater.inflate(R.layout.fragment_home, container, false)
 
-        birdItemList = initializeBirdItemList()
+        noteItemList = initializeBirdItemList()
 
         val recyclerView: RecyclerView = rootView.findViewById(R.id.home_recyclerView)
         val numberOfColumns = 2
         recyclerView.layoutManager = GridLayoutManager(this.context, numberOfColumns)
         recyclerView.adapter =
-                CustomRecyclerAdapter(birdItemList, this)
+                CustomRecyclerAdapter(noteItemList, this)
 
 
 //        val textView: TextView = rootView.findViewById(R.id.text_home)
@@ -45,35 +45,40 @@ class HomeFragment : Fragment(), OnBirdClickListener {
         val fab: FloatingActionButton = rootView.findViewById(R.id.home_fab)
         fab.setOnClickListener {
             val navController = findNavController()
-            navController.navigate(R.id.nave_create_page)
+            navController.navigate(R.id.nav_create_page)
         }
 
         return rootView
     }
 
-    private fun initializeBirdItemList(): List<BirdRecyclerViewItem>{
-        val birdList  = mutableListOf<BirdRecyclerViewItem>()
+    private fun initializeBirdItemList(): List<NoteRecyclerViewItem>{
+        val birdList  = mutableListOf<NoteRecyclerViewItem>()
 
         for (i in 0..10){
-            birdList.add(BirdRecyclerViewItem("Bird №$i",
+            birdList.add(NoteRecyclerViewItem("Bird №$i",
                                                     R.drawable.test,
-                                                    i,
+                                                    i.toString(),
                                             "какая-то птица"))
         }
 
         return birdList
     }
 
-    override fun onBirdClick(v: View?, bird: BirdRecyclerViewItem) {
-        Toast.makeText(v?.context, "You clicked ->"+ bird.name +" with ID:"+bird.birdId, Toast.LENGTH_SHORT).show()
+    override fun onNoteClick(v: View?, note: NoteRecyclerViewItem) {
+        Toast.makeText(v?.context, "You clicked ->"+ note.name +" with ID:"+note.id, Toast.LENGTH_SHORT).show()
         // TODO Обработка нажатия на карточку
+        val navController = findNavController()
+
+        val bundle = Bundle()
+        bundle.putString("NoteID",note.id)
+        navController.navigate(R.id.nav_note_page, bundle)
     }
 
 }
 
 
-class CustomRecyclerAdapter(private val values: List<BirdRecyclerViewItem>,
-                            private val itemClickListener: OnBirdClickListener) :
+class CustomRecyclerAdapter(private val values: List<NoteRecyclerViewItem>,
+                            private val itemClickListener: OnNoteClickListener) :
     RecyclerView.Adapter<CustomRecyclerAdapter.MyViewHolder>(){
 
     override fun getItemCount() = values.size
@@ -93,20 +98,20 @@ class CustomRecyclerAdapter(private val values: List<BirdRecyclerViewItem>,
     }
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var item_text : TextView? = null
-        var item_img : ImageView? = null
+        private var item_text : TextView? = null
+        private var item_img : ImageView? = null
         init {
             item_text = itemView.findViewById(R.id.home_item_text)
             item_img = itemView.findViewById(R.id.home_item_img)
         }
 
 
-        fun bind(bird: BirdRecyclerViewItem, itemClickListener: OnBirdClickListener) {
-            item_text?.text = bird.name
-            item_img?.setImageResource(bird.birdImageId)
+        fun bind(note: NoteRecyclerViewItem, itemClickListener: OnNoteClickListener) {
+            item_text?.text = note.name
+            item_img?.setImageResource(note.imageId)
 
             itemView.setOnClickListener{
-                itemClickListener.onBirdClick(it,bird)
+                itemClickListener.onNoteClick(it,note)
             }
         }
     }
