@@ -30,7 +30,7 @@
             android:id="@+id/action_nav_home_to_nav_settings"
             app:destination="@id/nav_settings" />
         <action
-            android:id="@+id/action_nav_home_to_loginActivity"
+            android:id="@+id/action_nav_home_to_nav_login"
             app:destination="@id/nav_login" />
     </fragment>
 
@@ -61,7 +61,11 @@
         android:id="@+id/nav_update_note"
         android:name="com.example.adfmp1h21_bird.ui.update_note.UpdateNoteFragment"
         android:label="@string/nav_note_create"
-        tools:layout="@layout/fragment_update_note" />
+        tools:layout="@layout/fragment_update_note" >
+        <action
+            android:id="@+id/action_nav_update_note_to_nav_note_page"
+            app:destination="@id/nav_note_page" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_note_page"
@@ -72,9 +76,22 @@
             android:id="@+id/action_nav_note_page_to_nav_update_note"
             app:destination="@id/nav_update_note" />
     </fragment>
-    <activity
+    <fragment
         android:id="@+id/nav_login"
-        android:name="com.example.adfmp1h21_bird.ui.login.LoginActivity"
-        android:label="activity_login"
-        tools:layout="@layout/activity_login" />
+        android:name="com.example.adfmp1h21_bird.ui.login.LoginFragment"
+        android:label="@string/nav_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_nav_login_to_registrationFragment"
+            app:destination="@id/nav_registration" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_registration"
+        android:name="com.example.adfmp1h21_bird.ui.registration.RegistrationFragment"
+        android:label="@string/nav_registration"
+        tools:layout="@layout/fragment_registration" >
+        <action
+            android:id="@+id/action_registrationFragment_to_nav_login"
+            app:destination="@id/nav_login" />
+    </fragment>
 </navigation>

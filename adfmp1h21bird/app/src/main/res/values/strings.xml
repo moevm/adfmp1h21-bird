@@ -42,6 +42,8 @@
     <string name="nav_note_create">Добавление заметки</string>
     <string name="nav_note_update">Изменение заметки</string>
     <string name="nav_name_note">Заметка</string>
+    <string name="nav_login">Авторизация</string>
+    <string name="nav_registration">Регистрация</string>
 
     <!-- Строки фангмента base   -->
     <string name="base_point">-</string>
