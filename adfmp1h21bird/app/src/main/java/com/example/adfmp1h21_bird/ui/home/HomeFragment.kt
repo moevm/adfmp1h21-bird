@@ -73,7 +73,7 @@ class HomeFragment : Fragment(), OnNoteClickListener {
 
         val bundle = Bundle()
         bundle.putString("NoteID",note.NoteId)
-        findNavController().navigate(R.id.nav_note_page, bundle)
+        findNavController().navigate(R.id.action_nav_home_to_nav_note_page, bundle)
     }
 
 }

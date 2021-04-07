@@ -64,7 +64,12 @@
         tools:layout="@layout/fragment_update_note" >
         <action
             android:id="@+id/action_nav_update_note_to_nav_note_page"
-            app:destination="@id/nav_note_page" />
+            app:destination="@id/nav_note_page"
+            app:popUpTo="@id/nav_note_page"
+            app:popUpToInclusive="false" />
+        <argument
+            android:name="NoteID"
+            app:argType="string" />
     </fragment>
 
     <fragment
@@ -75,6 +80,9 @@
         <action
             android:id="@+id/action_nav_note_page_to_nav_update_note"
             app:destination="@id/nav_update_note" />
+        <argument
+            android:name="NoteID"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/nav_login"
@@ -84,6 +92,10 @@
         <action
             android:id="@+id/action_nav_login_to_registrationFragment"
             app:destination="@id/nav_registration" />
+        <action
+            android:id="@+id/action_nav_login_to_nav_home"
+            app:destination="@id/nav_home"
+            app:popUpTo="@id/nav_home" />
     </fragment>
     <fragment
         android:id="@+id/nav_registration"
@@ -92,6 +104,7 @@
         tools:layout="@layout/fragment_registration" >
         <action
             android:id="@+id/action_registrationFragment_to_nav_login"
-            app:destination="@id/nav_login" />
+            app:destination="@id/nav_login"
+            app:popUpTo="@id/nav_login" />
     </fragment>
 </navigation>

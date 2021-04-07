@@ -103,12 +103,13 @@ class LoginFragment : Fragment() {
                     password.text.toString()
             )
 
-            val bun = Bundle()
-            findNavController().popBackStack()
+            // TODO добавить для возвращения на главный экран после успешного входа
+            // сейчас просто переход дальше
+            findNavController().navigate(R.id.action_nav_login_to_nav_home)
         }
 
         registration.setOnClickListener {
-            findNavController().navigate(R.id.nav_registration)
+            findNavController().navigate(R.id.action_nav_login_to_registrationFragment)
         }
     }
 

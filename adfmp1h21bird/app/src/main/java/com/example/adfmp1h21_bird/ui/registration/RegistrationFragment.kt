@@ -35,7 +35,7 @@ class RegistrationFragment : Fragment() {
         register.setOnClickListener {
 
             Toast.makeText(context, "Rigister user!", Toast.LENGTH_SHORT).show()
-            findNavController().popBackStack()
+            findNavController().navigate(R.id.action_registrationFragment_to_nav_login)
 
         }
 

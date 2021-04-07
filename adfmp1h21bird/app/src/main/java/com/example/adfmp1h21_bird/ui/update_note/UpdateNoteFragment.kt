@@ -67,7 +67,14 @@ class UpdateNoteFragment : Fragment() {
 
         save_button.setOnClickListener {
             Toast.makeText(context, "Save note", Toast.LENGTH_SHORT).show()
-            findNavController().popBackStack()
+            if(isNewNote){
+                findNavController().popBackStack()
+            }else{
+                val bundle = Bundle()
+                bundle.putString("NoteID",NoteID)
+                findNavController().navigate(R.id.action_nav_update_note_to_nav_note_page,bundle)
+            }
+
         }
 
 
