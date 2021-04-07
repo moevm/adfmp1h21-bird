@@ -2,6 +2,9 @@ package com.example.adfmp1h21_bird
 
 import android.os.Bundle
 import android.view.Menu
+import android.view.View
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
@@ -36,6 +39,13 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+
+        val heaser_user_name:TextView = navView.getHeaderView(0).findViewById(R.id.header_user_name)
+        heaser_user_name.setOnClickListener {
+
+            navController.navigate(R.id.nav_login)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

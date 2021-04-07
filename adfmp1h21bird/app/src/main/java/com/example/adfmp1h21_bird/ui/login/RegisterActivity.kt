@@ -6,8 +6,6 @@ import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
-import android.text.Editable
-import android.text.TextWatcher
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.Button
@@ -28,7 +26,7 @@ class RegisterActivity : AppCompatActivity() {
 
         val username = findViewById<EditText>(R.id.signup_username)
         val password = findViewById<EditText>(R.id.signup_password)
-        val login = findViewById<Button>(R.id.confirmSignUp)
+        val register = findViewById<Button>(R.id.confirmSignUp)
         val loading = findViewById<ProgressBar>(R.id.loading)
 
         loginViewModel = ViewModelProvider(this, LoginViewModelFactory())
@@ -38,7 +36,7 @@ class RegisterActivity : AppCompatActivity() {
             val loginState = it ?: return@Observer
 
             // disable login button unless both username / password is valid
-            login.isEnabled = loginState.isDataValid
+            register.isEnabled = loginState.isDataValid
 
             if (loginState.usernameError != null) {
                 username.error = getString(loginState.usernameError)
@@ -90,7 +88,7 @@ class RegisterActivity : AppCompatActivity() {
                 false
             }
 
-            login.setOnClickListener {
+            register.setOnClickListener {
                 loading.visibility = View.VISIBLE
                 loginViewModel.login(username.text.toString(), password.text.toString())
             }

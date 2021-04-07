@@ -20,7 +20,7 @@
 
     <!-- Данные шапки меню -->
     <string name="menu_header_title">BÖRD</string>
-    <string name="menu_header_subtitle">Имя пользователя</string>
+    <string name="menu_header_subtitle">Вход в учётную запись</string>
     <string name="menu_header_desc">Иконка приложения</string>
 
     <!-- Названия пунктов меню -->
