@@ -39,7 +39,8 @@
     <string name="nav_name_base">База знаний</string>
     <string name="nav_name_settings">Настройки</string>
     <string name="nav_name_exit">Выход</string>
-    <string name="nav_note_create">Добавление/Изменение заметки</string>
+    <string name="nav_note_create">Добавление заметки</string>
+    <string name="nav_note_update">Изменение заметки</string>
     <string name="nav_name_note">Заметка</string>
 
     <!-- Строки фангмента base   -->
@@ -78,6 +79,13 @@
     <string name="update_date">Дата</string>
     <string name="update_comment">Комментарий</string>
     <string name="update_save_button">Сохранить заметку</string>
+
+    <!-- Строки фангмента statistics   -->
+    <string name="stat_start_date">Используется с</string>
+    <string name="stat_number_foto">Добавлено фото</string>
+    <string name="stat_birds_in_tags">Видов птиц в тегах</string>
+    <string name="stat_red_bird_count">Краснокнижных птиц</string>
+
 
     <!--   base temp array   -->
     <string-array name="temp_db">

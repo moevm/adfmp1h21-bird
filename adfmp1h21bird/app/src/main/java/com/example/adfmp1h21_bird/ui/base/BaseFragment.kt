@@ -22,7 +22,7 @@ class BaseFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val rootView:View = inflater.inflate(R.layout.fragment_base, container, false)
 
         viewModel = ViewModelProvider(this).get(BaseViewModel::class.java)
@@ -46,6 +46,7 @@ class BaseFragment : Fragment() {
 //    }
     
     private fun getDataList(): List<String> {
+        // TODO запрос данных
         val data:List<String> = context?.resources?.getStringArray(R.array.temp_db)?.toList() ?: emptyList()
         return data
     }
@@ -59,7 +60,7 @@ class CustomRecyclerAdapter(private val values: List<String>) :
     override fun getItemCount() = values.size
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val itemView = LayoutInflater.from(parent?.context).inflate(R.layout.recyclerview_base_item, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.recyclerview_base_item, parent, false)
         return MyViewHolder(itemView)
     }
 
@@ -70,7 +71,7 @@ class CustomRecyclerAdapter(private val values: List<String>) :
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var base_text: TextView? = null
         init {
-            base_text = itemView?.findViewById(R.id.base_text)
+            base_text = itemView.findViewById(R.id.base_text)
         }
     }
 }

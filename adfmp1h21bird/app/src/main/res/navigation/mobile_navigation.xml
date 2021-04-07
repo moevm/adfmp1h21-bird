@@ -77,9 +77,4 @@
         android:name="com.example.adfmp1h21_bird.ui.login.LoginActivity"
         android:label="activity_login"
         tools:layout="@layout/activity_login" />
-    <activity
-        android:id="@+id/nav_register"
-        android:name="com.example.adfmp1h21_bird.ui.login.RegisterActivity"
-        android:label="activity_register"
-        tools:layout="@layout/activity_register" />
 </navigation>

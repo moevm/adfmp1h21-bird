@@ -7,7 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageButton
+import androidx.navigation.fragment.findNavController
 import com.example.adfmp1h21_bird.R
 import com.example.adfmp1h21_bird.note.myNote
 
@@ -31,12 +33,15 @@ class UpdateNoteFragment : Fragment() {
         val geotag: TextView = rootView.findViewById(R.id.update_geotag_textView)
         val tags: EditText = rootView.findViewById(R.id.update_tags_editText)
         val date: EditText = rootView.findViewById(R.id.update_date_editText)
-        val comment: EditText = rootView.findViewById(R.id.update_name_editText)
+        val comment: EditText = rootView.findViewById(R.id.update_comment_editText)
 
         val NoteID:String = arguments?.getString("NoteID").toString()
         val isNewNote: Boolean? = arguments?.getBoolean("isNewNote")
 
         if ( !isNewNote!!){
+
+            (requireActivity() as AppCompatActivity).supportActionBar?.title =
+                    context?.resources?.getString(R.string.nav_note_update)
 
             val note:myNote = getData(NoteID)
             image.setImageResource(note.ImageId)
@@ -46,8 +51,6 @@ class UpdateNoteFragment : Fragment() {
             date.setText(note.date)
             comment.setText(note.comment)
         }
-
-
 
 
         val image_button: Button  = rootView.findViewById(R.id.update_ImageView_button)
@@ -64,6 +67,7 @@ class UpdateNoteFragment : Fragment() {
 
         save_button.setOnClickListener {
             Toast.makeText(context, "Save note", Toast.LENGTH_SHORT).show()
+            findNavController().popBackStack()
         }
 
 
@@ -82,6 +86,7 @@ class UpdateNoteFragment : Fragment() {
 //    }
 
     private fun getData(NoteID:String): myNote {
+        // TODO получение данных
 
         val temp = myNote(
                 NoteID,

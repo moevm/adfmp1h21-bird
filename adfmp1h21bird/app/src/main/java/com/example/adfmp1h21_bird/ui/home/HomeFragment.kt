@@ -56,6 +56,7 @@ class HomeFragment : Fragment(), OnNoteClickListener {
     private fun initializeBirdItemList(): List<NoteRecyclerViewItem>{
         val birdList  = mutableListOf<NoteRecyclerViewItem>()
 
+        // TODO получение данных
         for (i in 0..10){
             birdList.add(NoteRecyclerViewItem("Bird №$i",
                                                     R.drawable.test,
