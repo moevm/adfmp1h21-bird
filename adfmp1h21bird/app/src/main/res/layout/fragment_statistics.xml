@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="0"
+    tools:context=".ui.statics.StatisticsFragment">
+
+
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="181dp">
+
+        <TextView
+            android:id="@+id/stat_start_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stat_start_date"
+            android:textSize="@dimen/font_size_h3"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/stat_start_date_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </TableRow>
+
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/stat_number_foto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stat_number_foto"
+            android:textSize="@dimen/font_size_h3"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/stat_number_foto_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/stat_birds_in_tags"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stat_birds_in_tags"
+            android:textSize="@dimen/font_size_h3"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/stat_birds_in_tags_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </TableRow>
+
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/stat_red_bird_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stat_red_bird_count"
+            android:textSize="@dimen/font_size_h3"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/stat_red_bird_count_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </TableRow>
+</TableLayout>

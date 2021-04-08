@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.adfmp1h21_bird.ui.home.HomeFragment"
+        android:label="@string/nav_name_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_nav_statistics"
+            app:destination="@id/nav_statistics" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_exit"
+            app:destination="@id/nav_exit"
+            app:enterAnim="@anim/nav_default_enter_anim" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_base"
+            app:destination="@id/nav_base" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_note_page"
+            app:destination="@id/nav_note_page" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_create_page"
+            app:destination="@id/nav_update_note" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_settings"
+            app:destination="@id/nav_settings" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_login"
+            app:destination="@id/nav_login" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_base"
+        android:name="com.example.adfmp1h21_bird.ui.base.BaseFragment"
+        android:label="@string/nav_name_base"
+        tools:layout="@layout/fragment_base" />
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.example.adfmp1h21_bird.ui.settings.SettingsFragment"
+        android:label="@string/nav_name_settings" />
+
+    <fragment
+        android:id="@+id/nav_statistics"
+        android:name="com.example.adfmp1h21_bird.ui.statics.StatisticsFragment"
+        android:label="@string/nav_name_statistics"
+        tools:layout="@layout/fragment_statistics" />
+
+    <fragment
+        android:id="@+id/nav_exit"
+        android:name="com.example.adfmp1h21_bird.ui.exit.ExitFragment"
+        android:label="@string/nav_name_exit"
+        tools:layout="@layout/fragment_exit" />
+
+    <fragment
+        android:id="@+id/nav_update_note"
+        android:name="com.example.adfmp1h21_bird.ui.update_note.UpdateNoteFragment"
+        android:label="@string/nav_note_create"
+        tools:layout="@layout/fragment_update_note" >
+        <action
+            android:id="@+id/action_nav_update_note_to_nav_note_page"
+            app:destination="@id/nav_note_page"
+            app:popUpTo="@id/nav_note_page"
+            app:popUpToInclusive="false" />
+        <argument
+            android:name="NoteID"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_note_page"
+        android:name="com.example.adfmp1h21_bird.ui.note_page.NoteFragment"
+        android:label="@string/nav_name_note"
+        tools:layout="@layout/fragment_note" >
+        <action
+            android:id="@+id/action_nav_note_page_to_nav_update_note"
+            app:destination="@id/nav_update_note" />
+        <argument
+            android:name="NoteID"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_login"
+        android:name="com.example.adfmp1h21_bird.ui.login.LoginFragment"
+        android:label="@string/nav_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_nav_login_to_registrationFragment"
+            app:destination="@id/nav_registration" />
+        <action
+            android:id="@+id/action_nav_login_to_nav_home"
+            app:destination="@id/nav_home"
+            app:popUpTo="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_registration"
+        android:name="com.example.adfmp1h21_bird.ui.registration.RegistrationFragment"
+        android:label="@string/nav_registration"
+        tools:layout="@layout/fragment_registration" >
+        <action
+            android:id="@+id/action_registrationFragment_to_nav_login"
+            app:destination="@id/nav_login"
+            app:popUpTo="@id/nav_login" />
+    </fragment>
+</navigation>

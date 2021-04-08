@@ -1,3 +1,104 @@
 <resources>
-    <string name="app_name">adfmp1h21-bird</string>
+    <string name="app_name">BÖRD</string>
+
+    <!-- Данные login and registration activity -->
+    <string name="text_register">Регистрация</string>
+    <string name="prompt_login">Логин</string>
+    <string name="prompt_password">Пароль</string>
+    <string name="action_sign_in">Войти</string>
+    <string name="action_sign_up">Зарегистрироваться</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="prompt_email">Email</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <!-- Данные шапки меню -->
+    <string name="menu_header_title">BÖRD</string>
+    <string name="menu_header_subtitle">Вход в учётную запись</string>
+    <string name="menu_header_desc">Иконка приложения</string>
+
+    <!-- Названия пунктов меню -->
+    <string name="menu_home">Галерея птичек</string>
+    <string name="menu_statistics">Статистика</string>
+    <string name="menu_base">База знаний</string>
+    <string name="menu_settings">Настройки</string>
+    <string name="menu_exit">Выход</string>
+
+    <!-- Заголовки списка опций -->
+    <string name="action_settings">Settings</string>
+
+    <!-- Заголовки фрагментов -->
+    <string name="nav_name_home">Галерея птичек</string>
+    <string name="nav_name_statistics">Статистика</string>
+    <string name="nav_name_base">База знаний</string>
+    <string name="nav_name_settings">Настройки</string>
+    <string name="nav_name_exit">Выход</string>
+    <string name="nav_note_create">Добавление заметки</string>
+    <string name="nav_note_update">Изменение заметки</string>
+    <string name="nav_name_note">Заметка</string>
+    <string name="nav_login">Авторизация</string>
+    <string name="nav_registration">Регистрация</string>
+
+    <!-- Строки фангмента base   -->
+    <string name="base_point">-</string>
+    <string name="base_header">Список данных из базы знаний:</string>
+
+    <!-- Строки фангмента home   -->
+    <string name="home_desc">Добавить запись</string>
+    <string name="home_item_img_decs">Птица</string>
+
+    <!-- Строки фангмента settings   -->
+    <string name="set_geotag">Автоматический геотег</string>
+    <string name="set_geotag_sum">Автоматически добавляет геометку к заметке</string>
+    <string name="set_clear_stat">Сброс статистики</string>
+    <string name="set_clear_stat_sum">Нажмите чтобы очистить вашу статистику приложения</string>
+    <string name="set_cat1">Настройки приложения</string>
+    <string name="set_cat2">Настройки аккаунта</string>
+    <string name="set_login">Изменить логин</string>
+    <string name="set_password">Изменить пароль</string>
+    <string name="set_login_sum">Для смены логина введите новый</string>
+    <string name="set_password_sum">Для смены пароля введите новый</string>
+
+    <!-- Строки фангмента note_page   -->
+    <string name="note_fab_desc">Дополнительные действия</string>
+    <string name="note_name">Название</string>
+    <string name="note_geotag">Геотег</string>
+    <string name="note_tags">Теги</string>
+    <string name="note_date">Дата</string>
+    <string name="note_comment">Комментарий</string>
+    <string name="note_imageView_desc"> Загружаемая фотография</string>
+    <string name="note_geotag_button_desc">Кнопка запроса геологации</string>
+
+    <!-- Строки фангмента update_note   -->
+    <string name="update_image_button"> Выбрать картинку</string>
+    <string name="update_name">Название</string>
+    <string name="update_geotag">Геотег</string>
+    <string name="update_tags">Теги</string>
+    <string name="update_date">Дата</string>
+    <string name="update_comment">Комментарий</string>
+    <string name="update_save_button">Сохранить заметку</string>
+    <string name="update_ImageView_desc">Изменяемая картинка</string>
+    <string name="update_geotag_button_desc">Кнопка запроса геолокации</string>
+
+    <!-- Строки фангмента statistics   -->
+    <string name="stat_start_date">Используется с</string>
+    <string name="stat_number_foto">Добавлено фото</string>
+    <string name="stat_birds_in_tags">Видов птиц в тегах</string>
+    <string name="stat_red_bird_count">Краснокнижных птиц</string>
+
+
+    <!--   base temp array   -->
+    <string-array name="temp_db">
+        <item>Факт 1</item>
+        <item>Факт 2</item>
+        <item>Факт 3</item>
+        <item>Завезённые на Сахалин пингвины</item>
+        <item>Факт 2</item>
+        <item>Факт 3</item>
+        <item>Факт 1</item>
+        <item>Синие голуби</item>
+        <item>Летающие страусы</item>
+    </string-array>
+
 </resources>
