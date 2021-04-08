@@ -19,7 +19,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_span="2"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:contentDescription="@string/note_imageView_desc"/>
         </TableRow>
 
         <TableRow
@@ -69,7 +70,8 @@
                     android:id="@+id/note_geotag_button"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:src="@android:drawable/ic_menu_mylocation" />
+                    android:src="@android:drawable/ic_menu_mylocation"
+                    android:contentDescription="@string/note_geotag_button_desc"/>
 
             </LinearLayout>
 

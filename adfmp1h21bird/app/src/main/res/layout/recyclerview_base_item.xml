@@ -8,7 +8,9 @@
     <TextView
         android:text= "@string/base_point"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/font_size_p"
+        android:textColor="@color/black"/>
 
 
     <TextView

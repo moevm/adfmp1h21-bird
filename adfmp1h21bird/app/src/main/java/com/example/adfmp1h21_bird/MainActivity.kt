@@ -42,8 +42,8 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
 
-        val heaser_user_name:TextView = navView.getHeaderView(0).findViewById(R.id.header_user_name)
-        heaser_user_name.setOnClickListener {
+        val headerUserName:TextView = navView.getHeaderView(0).findViewById(R.id.header_user_name)
+        headerUserName.setOnClickListener {
             navController.navigate(R.id.nav_login)
             drawerLayout.closeDrawer(navView)
         }

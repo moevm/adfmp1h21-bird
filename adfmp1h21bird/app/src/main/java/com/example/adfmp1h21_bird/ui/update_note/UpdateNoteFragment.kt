@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageButton
 import androidx.navigation.fragment.findNavController
 import com.example.adfmp1h21_bird.R
-import com.example.adfmp1h21_bird.note.myNote
+import com.example.adfmp1h21_bird.note.MyNote
 
 class UpdateNoteFragment : Fragment() {
 
@@ -35,7 +35,7 @@ class UpdateNoteFragment : Fragment() {
         val date: EditText = rootView.findViewById(R.id.update_date_editText)
         val comment: EditText = rootView.findViewById(R.id.update_comment_editText)
 
-        val NoteID:String = arguments?.getString("NoteID").toString()
+        val noteId:String = arguments?.getString("NoteID").toString()
         val isNewNote: Boolean? = arguments?.getBoolean("isNewNote")
 
         if ( !isNewNote!!){
@@ -43,7 +43,7 @@ class UpdateNoteFragment : Fragment() {
             (requireActivity() as AppCompatActivity).supportActionBar?.title =
                     context?.resources?.getString(R.string.nav_note_update)
 
-            val note:myNote = getData(NoteID)
+            val note:MyNote = getData(noteId)
             image.setImageResource(note.ImageId)
             name.setText(note.name)
             geotag.text =note.geotag
@@ -53,25 +53,25 @@ class UpdateNoteFragment : Fragment() {
         }
 
 
-        val image_button: Button  = rootView.findViewById(R.id.update_ImageView_button)
-        val geotag_button: AppCompatImageButton = rootView.findViewById(R.id.update_geotag_button)
-        val save_button: Button = rootView.findViewById(R.id.update_save_button)
+        val imageButton: Button  = rootView.findViewById(R.id.update_ImageView_button)
+        val geotagButton: AppCompatImageButton = rootView.findViewById(R.id.update_geotag_button)
+        val saveButton: Button = rootView.findViewById(R.id.update_save_button)
 
-        image_button.setOnClickListener {
+        imageButton.setOnClickListener {
             Toast.makeText(context, "Change image", Toast.LENGTH_SHORT).show()
         }
 
-        geotag_button.setOnClickListener {
+        geotagButton.setOnClickListener {
             Toast.makeText(context, "Change geolocation", Toast.LENGTH_SHORT).show()
         }
 
-        save_button.setOnClickListener {
+        saveButton.setOnClickListener {
             Toast.makeText(context, "Save note", Toast.LENGTH_SHORT).show()
             if(isNewNote){
                 findNavController().popBackStack()
             }else{
                 val bundle = Bundle()
-                bundle.putString("NoteID",NoteID)
+                bundle.putString("NoteID",noteId)
                 findNavController().navigate(R.id.action_nav_update_note_to_nav_note_page,bundle)
             }
 
@@ -92,10 +92,10 @@ class UpdateNoteFragment : Fragment() {
 //        // TODO: Use the ViewModel
 //    }
 
-    private fun getData(NoteID:String): myNote {
+    private fun getData(NoteID:String): MyNote {
         // TODO получение данных
 
-        val temp = myNote(
+        val temp = MyNote(
                 NoteID,
                 "Неро $NoteID",
                 R.drawable.test,

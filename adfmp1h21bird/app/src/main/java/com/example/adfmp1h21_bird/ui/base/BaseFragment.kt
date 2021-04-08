@@ -65,13 +65,13 @@ class CustomRecyclerAdapter(private val values: List<String>) :
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.base_text?.text = values[position]
+        holder.baseText?.text = values[position]
     }
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var base_text: TextView? = null
+        var baseText: TextView? = null
         init {
-            base_text = itemView.findViewById(R.id.base_text)
+            baseText = itemView.findViewById(R.id.base_text)
         }
     }
 }

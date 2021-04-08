@@ -24,7 +24,7 @@ class RegistrationFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val rootView:View = inflater.inflate(R.layout.fragment_registration, container, false)
 
         val username = rootView.findViewById<EditText>(R.id.signup_username)

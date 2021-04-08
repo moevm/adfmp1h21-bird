@@ -7,10 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.navigation.Navigation
-import androidx.navigation.fragment.findNavController
 import com.example.adfmp1h21_bird.R
-import com.example.adfmp1h21_bird.note.myNote
 
 class StatisticsFragment : Fragment() {
 
@@ -26,19 +23,17 @@ class StatisticsFragment : Fragment() {
     ): View {
         val rootView:View = inflater.inflate(R.layout.fragment_statistics, container, false)
         viewModel = ViewModelProvider(this).get(StatisticsViewModel::class.java)
-//        val textView: TextView = rootView.findViewById(R.id.statics_test)
-//        textView.text = " my statics test!! "
 
-        val start_date:TextView = rootView.findViewById(R.id.stat_start_date_textView)
-        val number_foto:TextView = rootView.findViewById(R.id.stat_number_foto_textView)
-        val birds_in_tags:TextView = rootView.findViewById(R.id.stat_birds_in_tags_textView)
-        val red_bird_count:TextView = rootView.findViewById(R.id.stat_red_bird_count_textView)
+        val startDate:TextView = rootView.findViewById(R.id.stat_start_date_textView)
+        val numberFoto:TextView = rootView.findViewById(R.id.stat_number_foto_textView)
+        val birdsInTags:TextView = rootView.findViewById(R.id.stat_birds_in_tags_textView)
+        val redBirdCount:TextView = rootView.findViewById(R.id.stat_red_bird_count_textView)
 
         val stat = getData()
-        start_date.text = stat.date
-        number_foto.text = stat.number_foto.toString()
-        birds_in_tags.text = stat.birds_in_tags.toString()
-        red_bird_count.text = stat.red_birds_count.toString()
+        startDate.text = stat.date
+        numberFoto.text = stat.number_foto.toString()
+        birdsInTags.text = stat.birds_in_tags.toString()
+        redBirdCount.text = stat.red_birds_count.toString()
 
 
         return rootView

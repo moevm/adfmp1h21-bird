@@ -100,17 +100,17 @@ class CustomRecyclerAdapter(private val values: List<NoteRecyclerViewItem>,
     }
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private var item_text : TextView? = null
-        private var item_img : ImageView? = null
+        private var itemText : TextView? = null
+        private var itemImg : ImageView? = null
         init {
-            item_text = itemView.findViewById(R.id.home_item_text)
-            item_img = itemView.findViewById(R.id.home_item_img)
+            itemText = itemView.findViewById(R.id.home_item_text)
+            itemImg = itemView.findViewById(R.id.home_item_img)
         }
 
 
         fun bind(note: NoteRecyclerViewItem, itemClickListener: OnNoteClickListener) {
-            item_text?.text = note.name
-            item_img?.setImageResource(note.imageId)
+            itemText?.text = note.name
+            itemImg?.setImageResource(note.imageId)
 
             itemView.setOnClickListener{
                 itemClickListener.onNoteClick(it,note)
