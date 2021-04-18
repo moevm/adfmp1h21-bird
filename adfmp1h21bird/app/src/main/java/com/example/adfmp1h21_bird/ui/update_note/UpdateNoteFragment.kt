@@ -44,7 +44,7 @@ class UpdateNoteFragment : Fragment() {
                     context?.resources?.getString(R.string.nav_note_update)
 
             val note:MyNote = getData(noteId)
-            image.setImageResource(note.ImageId)
+            image.setImageResource(note.ImageURI.toInt())
             name.setText(note.name)
             geotag.text =note.geotag
             tags.setText(note.tags)
@@ -96,9 +96,9 @@ class UpdateNoteFragment : Fragment() {
         // TODO получение данных
 
         val temp = MyNote(
-                NoteID,
+                NoteID.toLong(),
                 "Неро $NoteID",
-                R.drawable.test,
+                R.drawable.test.toString(),
                 "Какой-то geotag",
                 "Птичка, днвочка, красная",
                 "31.03.2077",

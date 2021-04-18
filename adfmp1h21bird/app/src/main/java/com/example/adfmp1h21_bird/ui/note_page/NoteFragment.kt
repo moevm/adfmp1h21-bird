@@ -74,7 +74,7 @@ class NoteFragment : Fragment() {
         tags.text = note.tags
         date.text = note.date
         comment.text = note.comment
-        image.setImageResource(note.ImageId)
+        image.setImageResource(note.ImageURI.toInt())
 
         val geotagButton: AppCompatImageButton = rootView.findViewById(R.id.note_geotag_button)
         geotagButton.setOnClickListener{
@@ -96,9 +96,9 @@ class NoteFragment : Fragment() {
     private fun getData(NoteID:String): MyNote {
 
         val temp = MyNote(
-                NoteID,
+                NoteID.toLong(),
                 "Неро $NoteID",
-                R.drawable.test,
+                R.drawable.test.toString(),
                 "Какой-то geotag",
                 "Птичка, днвочка, красная",
                 "31.03.2077",
