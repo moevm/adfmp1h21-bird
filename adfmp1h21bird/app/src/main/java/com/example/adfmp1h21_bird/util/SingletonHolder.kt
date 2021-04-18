@@ -1,4 +1,4 @@
-package com.example.adfmp1h21_bird.database
+package com.example.adfmp1h21_bird.util
 
 open class SingletonHolder<out T: Any, in A>(creator: (A)-> T) {
     private var creator: ((A) ->T)? = creator

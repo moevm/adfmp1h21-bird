@@ -3,6 +3,7 @@ package com.example.adfmp1h21_bird.database
 import android.content.ContentValues
 import android.content.Context
 import com.example.adfmp1h21_bird.note.MyNote
+import com.example.adfmp1h21_bird.util.SingletonHolder
 
 class NoteDatabase private constructor(context: Context){
     private var helper: DBHelper// = DBHelper(context);
