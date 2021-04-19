@@ -37,7 +37,7 @@ class NoteDatabase private constructor(context: Context){
         }
         return notes
     }
-    fun getNoteById(Id: Int): MyNote?{
+    fun getNoteById(Id: Long): MyNote?{
         var note: MyNote? = null
         val cursor = helper.writableDatabase.rawQuery("SELECT * FROM ${helper.TABLE_NAME} WHERE _id = $Id", null)
         try{
