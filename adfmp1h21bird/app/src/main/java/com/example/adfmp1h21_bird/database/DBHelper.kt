@@ -8,7 +8,7 @@ class DBHelper(context: Context): SQLiteOpenHelper(context, "BirdDB", null, 1) {
     val TABLE_NAME = "Birds";
 
     override fun onCreate(db: SQLiteDatabase?) {
-        db?.execSQL("create table $TABLE_NAME( _id long primary key, name text, imageURI text, geotag text, tags text, date text, comment text)")
+        db?.execSQL("create table $TABLE_NAME( _id integer primary key autoincrement, name text, imageURI text, geotag text, tags text, date text, comment text)")
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {

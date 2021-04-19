@@ -128,14 +128,21 @@ class UpdateNoteFragment : Fragment() {
                         var fout = File(requireContext().filesDir,"${System.currentTimeMillis()}.jpg")
 //                        fout.createNewFile()
                         fin.copyTo(fout)
-                        it1.ImageURI = Uri.fromFile(fout).path.toString()
+                        it1.ImageURI = getRealPathUri(Uri.fromFile(fout)).toString()
                         //delete old
-                        var fdel = File(Uri.decode(oldImage))
+                        var fdel = File(oldImage)
                         fdel.delete()
                     }
                 }
+                note?.let { it ->
+                    it.name = this.name!!.text.toString()
+                    it.geotag = this.geotag!!.text.toString()
+                    it.tags = this.tags!!.text.toString()
+                    it.date = this.date!!.text.toString()
+                    it.comment = this.comment!!.text.toString()
+                }
                 note?.let { it1 -> NoteDatabase.getInstance(requireContext()).updateNote(it1) }
-                Log.d("BIRD_DATABASE", "after updating old: ${NoteDatabase.getInstance(requireContext()).getAllNotes().toString()}")
+                Log.d("BIRD_DATABASE", "after updating old: ${NoteDatabase.getInstance(requireContext()).getAllNotes()}")
                 val bundle = Bundle()
                 bundle.putString("NoteID", noteId.toString())
                 findNavController().navigate(R.id.action_nav_update_note_to_nav_note_page,bundle)
@@ -155,7 +162,7 @@ class UpdateNoteFragment : Fragment() {
         if(resultCode == RESULT_OK){
             if(requestCode == 1000){
                 val returnURI = data?.data
-                if (!isNewNote && isImageChanged) {
+                if (!isNewNote && !isImageChanged) {
                     this.oldImage = note!!.ImageURI
                     note!!.ImageURI = returnURI?.let { getRealPathUri(it) }.toString()
                     this.isImageChanged = true

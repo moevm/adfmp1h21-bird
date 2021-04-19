@@ -2,14 +2,14 @@ package com.example.adfmp1h21_bird.note
 
 class MyNote(
         val ID: Long,
-        val name: String,
+        var name: String,
         var ImageURI: String,
-        val geotag: String,
-        val tags: String,
-        val date: String,
-        val comment: String){
+        var geotag: String,
+        var tags: String,
+        var date: String,
+        var comment: String){
 
     override fun toString(): String {
-        return "{Id: $ID, name: \"$name\", ImageURI: \"$ImageURI\", geotag: \"$geotag\", tags: \"$tags\", date: \"$date\", comment: \"$comment\"}"
+        return "\n{Id: $ID, name: \"$name\", ImageURI: \"$ImageURI\", geotag: \"$geotag\", tags: \"$tags\", date: \"$date\", comment: \"$comment\"}"
     }
 }
