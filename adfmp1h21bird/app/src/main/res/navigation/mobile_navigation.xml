@@ -38,7 +38,11 @@
         android:id="@+id/nav_base"
         android:name="com.example.adfmp1h21_bird.ui.base.BaseFragment"
         android:label="@string/nav_name_base"
-        tools:layout="@layout/fragment_base" />
+        tools:layout="@layout/fragment_base" >
+        <action
+            android:id="@+id/action_nav_base_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_settings"
