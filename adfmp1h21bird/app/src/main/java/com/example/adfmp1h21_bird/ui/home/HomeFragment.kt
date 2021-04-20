@@ -57,8 +57,6 @@ class HomeFragment : Fragment(), OnNoteClickListener {
     private fun initializeBirdItemList(): List<NoteRecyclerViewItem>{
         val birdList  = mutableListOf<NoteRecyclerViewItem>()
 
-        // TODO получение данных
-
         context?.let {
             var notes = NoteDatabase.getInstance(it).getAllNotes()
 
