@@ -8,6 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.example.adfmp1h21_bird.R
+import com.example.adfmp1h21_bird.database.NoteDatabase
+import java.time.LocalDate
+import java.time.ZoneId
+import java.time.format.DateTimeFormatter
 
 class StatisticsFragment : Fragment() {
 
@@ -47,16 +51,42 @@ class StatisticsFragment : Fragment() {
     )
 
     private fun getData(): Statistics {
-        // TODO получение данных для статистики
+// TODO получение данных для статистики
+
+        val notes = NoteDatabase.getInstance(requireContext()).getAllNotes()
+
+        var oldestNoteIndex = -1
+        var oldestTime: Long = 0
+
+        for ((i, note) in notes.withIndex()) {
+            try {
+                val l = LocalDate.parse(note.date, DateTimeFormatter.ofPattern("dd.MM.yyyy"))
+                val noteTime = l.atStartOfDay(ZoneId.systemDefault()).toInstant().epochSecond
+
+                if (noteTime > oldestTime) {
+                    oldestTime = noteTime
+                    oldestNoteIndex = i
+                }
+            }
+            catch(e: Exception) {}
+        }
+
+        var date = "31.02.2014"
+
+        if (oldestNoteIndex != -1) {
+            date = notes[oldestNoteIndex].date
+        }
 
         val temp = Statistics(
-                "31.03.2077",
-                100500,
-                10,
-                3
+            date,
+            notes.size,
+            10,
+            3
         )
+
         return temp
     }
+
 
 //    override fun onActivityCreated(savedInstanceState: Bundle?) {
 //        super.onActivityCreated(savedInstanceState)
