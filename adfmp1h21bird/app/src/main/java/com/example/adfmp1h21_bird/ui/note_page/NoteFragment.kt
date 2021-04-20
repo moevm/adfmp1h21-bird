@@ -77,10 +77,10 @@ class NoteFragment : Fragment() {
         val note = getData(noteId)
         name.text = note!!.name
         geotag.text = note!!.geotag
-        tags.text = note!!.tags
-        date.text = note!!.date
-        comment.text = note!!.comment
-        image.setImageURI(Uri.parse(note!!.ImageURI))
+        tags.text = note.tags
+        date.text = note.date
+        comment.text = note.comment
+        image.setImageURI(Uri.parse(note.ImageURI))
 
         val geotagButton: AppCompatImageButton = rootView.findViewById(R.id.note_geotag_button)
         geotagButton.setOnClickListener{
