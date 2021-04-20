@@ -1,5 +1,6 @@
 package com.example.adfmp1h21_bird.ui.home
 
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -67,21 +68,9 @@ class HomeFragment : Fragment(), OnNoteClickListener {
                     birdList.add(
                         NoteRecyclerViewItem(
                             note.name,
-                            R.drawable.test,
+                            note.ImageURI,
                             note.ID.toString(),
                             note.tags
-                        )
-                    )
-                }
-            }
-            else {
-                for (i in 0..10) {
-                    birdList.add(
-                        NoteRecyclerViewItem(
-                            "Bird №${i}",
-                            R.drawable.test,
-                            i.toString(),
-                            "default bird"
                         )
                     )
                 }
@@ -134,7 +123,7 @@ class CustomRecyclerAdapter(private val values: List<NoteRecyclerViewItem>,
 
         fun bind(note: NoteRecyclerViewItem, itemClickListener: OnNoteClickListener) {
             itemText?.text = note.name
-            itemImg?.setImageResource(note.imageId)
+            itemImg?.setImageURI(Uri.parse(note.imageUri))
 
             itemView.setOnClickListener{
                 itemClickListener.onNoteClick(it,note)
