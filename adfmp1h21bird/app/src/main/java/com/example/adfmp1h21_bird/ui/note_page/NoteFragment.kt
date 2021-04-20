@@ -63,10 +63,10 @@ class NoteFragment : Fragment() {
             context?.let {
                 NoteDatabase.getInstance(it).deleteNote(note!!.ID.toInt())
             }
-//            Toast.makeText(context, "Note deleted", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Note deleted", Toast.LENGTH_SHORT).show()
 
-            //val bundle = Bundle()
-            //findNavController().navigate(R.id.action_nav_note_page_to_nav_update_note, bundle)
+            val bundle = Bundle()
+            //findNavController().navigate(R.id., bundle)
         }
 
         val name: TextView = rootView.findViewById(R.id.note_name_textView)
