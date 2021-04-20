@@ -20,7 +20,7 @@ class NoteDatabase private constructor(context: Context){
             if (cursor.count>0) {
                 cursor.moveToFirst()
                 do {
-                    val note = MyNote(cursor.getLong(0)
+                    val note = MyNote(cursor.getInt(0)
                             , cursor.getString(1)
                             , cursor.getString(2)
                             , cursor.getString(3)
@@ -40,7 +40,7 @@ class NoteDatabase private constructor(context: Context){
 
     // Картинку устанавливать так: imageView.setImageURI(Uri.fromFile(File(note.imageURI)))
     // Это говнокод, но вроде работает
-    fun getNoteById(Id: Long): MyNote?{
+    fun getNoteById(Id: Int): MyNote?{
         var note: MyNote? = null
 
         var notes = getAllNotes()
@@ -49,9 +49,7 @@ class NoteDatabase private constructor(context: Context){
         try{
             if (cursor.count > 0){
                 cursor.moveToFirst()
-                var id = cursor.getLong(0)
-
-                note = MyNote(cursor.getLong(0)
+              note = MyNote(cursor.getInt(0)
                         ,cursor.getString(1)
                         ,cursor.getString(2)
                         ,cursor.getString(3)
@@ -77,7 +75,7 @@ class NoteDatabase private constructor(context: Context){
         content.put("comment", note.comment)
         helper.writableDatabase.replace(helper.TABLE_NAME,null, content)
     }
-    fun addNote(note: MyNote): Long{ // Игнорирует Id в note, возвращает валидный Id
+    fun addNote(note: MyNote): Int{ // Игнорирует Id в note, возвращает валидный Id
         val content = ContentValues()
 //        content.put("_id", note.ID)
         content.put("name", note.name)
@@ -88,10 +86,14 @@ class NoteDatabase private constructor(context: Context){
         content.put("comment", note.comment)
         val id = helper.writableDatabase.insert(helper.TABLE_NAME,null, content)
         helper.close()
-        return id
+        return id.toInt()
     }
     fun deleteNote(Id: Int){
-        helper.writableDatabase.delete(helper.TABLE_NAME, "_id = $Id", null)
+        helper.writableDatabase.delete(helper.TABLE_NAME, "_id = $Id",null)
         helper.close()
+    }
+
+    fun clearDatabase(){
+        helper.writableDatabase.execSQL("delete from ${helper.TABLE_NAME}")
     }
 }

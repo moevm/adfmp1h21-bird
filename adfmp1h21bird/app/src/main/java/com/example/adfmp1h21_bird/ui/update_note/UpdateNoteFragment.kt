@@ -21,7 +21,6 @@ import com.example.adfmp1h21_bird.R
 import com.example.adfmp1h21_bird.database.NoteDatabase
 import com.example.adfmp1h21_bird.note.MyNote
 import java.io.File
-import java.net.URI
 
 class UpdateNoteFragment : Fragment() {
 
@@ -58,9 +57,9 @@ class UpdateNoteFragment : Fragment() {
         this.comment = rootView.findViewById(R.id.update_comment_editText)
 
         val noteArg = arguments?.getString("NoteID")
-        var noteId: Long = 0
+        var noteId: Int = 0
         if(noteArg != null){
-            noteId = noteArg!!.toLong()
+            noteId = noteArg.toInt()
         }
         isNewNote = arguments?.getBoolean("isNewNote") == true
 
@@ -98,6 +97,7 @@ class UpdateNoteFragment : Fragment() {
 
         geotagButton.setOnClickListener {
             Toast.makeText(context, "Change geolocation", Toast.LENGTH_SHORT).show()
+
         }
 
         saveButton.setOnClickListener {
@@ -117,7 +117,7 @@ class UpdateNoteFragment : Fragment() {
 
                     note = MyNote(0, this.name!!.text.toString(), this.newImageURI, this.geotag!!.text.toString(), this.tags!!.text.toString(), this.date!!.text.toString(), this.comment!!.text.toString())
                     note?.let { it1 -> NoteDatabase.getInstance(requireContext()).addNote(it1) }
-                    Log.d("BIRD_DATABASE", "after adding new: ${NoteDatabase.getInstance(requireContext()).getAllNotes().toString()}")
+//                    Log.d("BIRD_DATABASE", "after adding new: ${NoteDatabase.getInstance(requireContext()).getAllNotes().toString()}")
                     findNavController().popBackStack()
                 }
             }else{
@@ -142,7 +142,7 @@ class UpdateNoteFragment : Fragment() {
                     it.comment = this.comment!!.text.toString()
                 }
                 note?.let { it1 -> NoteDatabase.getInstance(requireContext()).updateNote(it1) }
-                Log.d("BIRD_DATABASE", "after updating old: ${NoteDatabase.getInstance(requireContext()).getAllNotes()}")
+//                Log.d("BIRD_DATABASE", "after updating old: ${NoteDatabase.getInstance(requireContext()).getAllNotes()}")
                 val bundle = Bundle()
                 bundle.putString("NoteID", noteId.toString())
                 findNavController().navigate(R.id.action_nav_update_note_to_nav_note_page,bundle)
@@ -198,7 +198,7 @@ class UpdateNoteFragment : Fragment() {
 //        // TODO: Use the ViewModel
 //    }
 
-    private fun getData(NoteID:Long) {
+    private fun getData(NoteID:Int) {
         context?.let {
             var temp = NoteDatabase.getInstance(it).getNoteById(NoteID)
             if(temp == null)

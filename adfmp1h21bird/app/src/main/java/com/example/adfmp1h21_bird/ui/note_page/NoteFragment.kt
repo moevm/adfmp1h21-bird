@@ -102,6 +102,7 @@ class NoteFragment : Fragment() {
         return rootView
     }
 
+
     private fun getData(NoteID:String) {
         context?.let {
             this.note = NoteDatabase.getInstance(it).getNoteById(NoteID.toLong())
