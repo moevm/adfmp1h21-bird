@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.adfmp1h21_bird.R
+import com.example.adfmp1h21_bird.database.NoteDatabase
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class HomeFragment : Fragment(), OnNoteClickListener {
@@ -57,11 +58,36 @@ class HomeFragment : Fragment(), OnNoteClickListener {
         val birdList  = mutableListOf<NoteRecyclerViewItem>()
 
         // TODO получение данных
-        for (i in 0..10){
-            birdList.add(NoteRecyclerViewItem("Bird №$i",
-                                                    R.drawable.test,
-                                                    i.toString(),
-                                            "какая-то птица"))
+
+        context?.let {
+            var notes = NoteDatabase.getInstance(it).getAllNotes()
+
+            if (notes.isNotEmpty()) {
+                for (i in notes.indices) {
+                    var note = notes[i]
+
+                    birdList.add(
+                        NoteRecyclerViewItem(
+                            note.name,
+                            R.drawable.test,
+                            note.ID.toString(),
+                            note.tags
+                        )
+                    )
+                }
+            }
+            else {
+                for (i in 0..10) {
+                    birdList.add(
+                        NoteRecyclerViewItem(
+                            "Bird №${i}",
+                            R.drawable.test,
+                            i.toString(),
+                            "default bird"
+                        )
+                    )
+                }
+            }
         }
 
         return birdList
