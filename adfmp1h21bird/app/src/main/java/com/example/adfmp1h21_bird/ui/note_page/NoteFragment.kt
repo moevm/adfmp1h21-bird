@@ -66,7 +66,7 @@ class NoteFragment : Fragment() {
             Toast.makeText(context, "Note deleted", Toast.LENGTH_SHORT).show()
 
             val bundle = Bundle()
-            //findNavController().navigate(R.id., bundle)
+            findNavController().navigate(R.id.action_nav_note_page_to_nav_home, bundle)
         }
 
         val name: TextView = rootView.findViewById(R.id.note_name_textView)
