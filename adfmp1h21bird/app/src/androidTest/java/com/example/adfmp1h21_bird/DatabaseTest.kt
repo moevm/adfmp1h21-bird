@@ -50,7 +50,6 @@ class DatabaseTest {
         val newDate = "date"
         val newComment = "comment"
         note.ID = NoteDatabase.getInstance(context).addNote(note)
-        assertEquals(NoteDatabase.getInstance(context).getAllNotes(), NoteDatabase.getInstance(context).getAllNotes())
 
         note.name = newName
         NoteDatabase.getInstance(context).updateNote(note)
