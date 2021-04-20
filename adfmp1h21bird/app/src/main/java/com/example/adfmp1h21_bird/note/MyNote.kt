@@ -1,7 +1,7 @@
 package com.example.adfmp1h21_bird.note
 
 class MyNote(
-        val ID: Long,
+        var ID: Int,
         var name: String,
         var ImageURI: String,
         var geotag: String,

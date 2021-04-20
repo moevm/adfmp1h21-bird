@@ -96,7 +96,7 @@ class NoteFragment : Fragment() {
     private fun getData(NoteID:String): MyNote {
 
         val temp = MyNote(
-                NoteID.toLong(),
+                NoteID.toInt(),
                 "Неро $NoteID",
                 R.drawable.test.toString(),
                 "Какой-то geotag",

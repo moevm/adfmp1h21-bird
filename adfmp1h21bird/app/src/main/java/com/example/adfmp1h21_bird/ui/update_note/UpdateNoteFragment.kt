@@ -21,7 +21,6 @@ import com.example.adfmp1h21_bird.R
 import com.example.adfmp1h21_bird.database.NoteDatabase
 import com.example.adfmp1h21_bird.note.MyNote
 import java.io.File
-import java.net.URI
 
 class UpdateNoteFragment : Fragment() {
 
@@ -58,9 +57,9 @@ class UpdateNoteFragment : Fragment() {
         this.comment = rootView.findViewById(R.id.update_comment_editText)
 
         val noteArg = arguments?.getString("NoteID")
-        var noteId: Long = 0
+        var noteId: Int = 0
         if(noteArg != null){
-            noteId = noteArg!!.toLong()
+            noteId = noteArg.toInt()
         }
         isNewNote = arguments?.getBoolean("isNewNote") == true
 
@@ -198,7 +197,7 @@ class UpdateNoteFragment : Fragment() {
 //        // TODO: Use the ViewModel
 //    }
 
-    private fun getData(NoteID:Long) {
+    private fun getData(NoteID:Int) {
         context?.let {
             var temp = NoteDatabase.getInstance(it).getNoteById(NoteID)
             if(temp == null)
