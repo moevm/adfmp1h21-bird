@@ -81,8 +81,7 @@ class HomeFragment : Fragment(), OnNoteClickListener {
     }
 
     override fun onNoteClick(v: View?, note: NoteRecyclerViewItem) {
-        Toast.makeText(v?.context, "You clicked ->"+ note.name +" with ID:"+note.NoteId, Toast.LENGTH_SHORT).show()
-        // TODO Обработка нажатия на карточку
+//        Toast.makeText(v?.context, "You clicked ->"+ note.name +" with ID:"+note.NoteId, Toast.LENGTH_SHORT).show()
 
         val bundle = Bundle()
         bundle.putString("NoteID",note.NoteId)

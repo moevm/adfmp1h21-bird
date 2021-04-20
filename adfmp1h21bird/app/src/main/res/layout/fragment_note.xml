@@ -27,44 +27,55 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" >
 
-            <TextView
-                android:id="@+id/note_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/note_name"
-                android:textSize="@dimen/font_size_h3"
-                android:textColor="@color/black"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/note_name_textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="@dimen/font_size_p"
-                 />
+                <TextView
+                    android:id="@+id/note_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/fragment_horizontal_margin"
+                    android:text="@string/note_name"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_size_h3" />
+
+                <TextView
+                    android:id="@+id/note_name_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_size_h3" />
+            </LinearLayout>
+
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
 
-            <TextView
-                android:id="@+id/note_geotag"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/note_geotag"
-                android:textSize="@dimen/font_size_h3"
-                android:textColor="@color/black"/>
-
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/note_geotag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/fragment_horizontal_margin"
+                    android:text="@string/note_geotag"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_size_h3" />
+
                 <TextView
                     android:id="@+id/note_geotag_textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/font_size_p" />
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_size_h3" />
 
                 <ImageButton
                     android:id="@+id/note_geotag_button"
@@ -81,41 +92,56 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
 
-            <TextView
-                android:id="@+id/note_tags"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/note_tags"
-                android:textSize="@dimen/font_size_h3"
-                android:textColor="@color/black"
-                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/note_tags_textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="@dimen/font_size_p"
-                />
+                <TextView
+                    android:id="@+id/note_tags"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/fragment_horizontal_margin"
+                    android:text="@string/note_tags"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_size_h3" />
+
+                <TextView
+                    android:id="@+id/note_tags_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_size_h3" />
+            </LinearLayout>
+
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
 
-            <TextView
-                android:id="@+id/note_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/note_date"
-                android:textSize="@dimen/font_size_h3"
-                android:textColor="@color/black"
-                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/note_date_textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="@dimen/font_size_p"/>
+                <TextView
+                    android:id="@+id/note_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/fragment_horizontal_margin"
+                    android:text="@string/note_date"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_size_h3" />
+
+                <TextView
+                    android:id="@+id/note_date_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_size_h3" />
+            </LinearLayout>
+
         </TableRow>
 
 
@@ -127,6 +153,7 @@
                 android:id="@+id/note_comment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/fragment_horizontal_margin"
                 android:text="@string/note_comment"
                 android:textSize="@dimen/font_size_h3"
                 android:textColor="@color/black"
@@ -143,7 +170,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_span="3"
-                android:textSize="@dimen/font_size_p"
+                android:textSize="@dimen/font_size_h3"
                 />
 
         </TableRow>

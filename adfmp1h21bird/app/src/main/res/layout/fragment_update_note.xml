@@ -44,23 +44,29 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/update_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/update_name"
-                android:textColor="@color/black"
-                android:textSize="@dimen/font_size_h3" />
-
-
-            <EditText
-                android:id="@+id/update_name_editText"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="text"
-                android:text=""
-                android:autofillHints="" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/update_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/fragment_horizontal_margin"
+                    android:text="@string/update_name"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_size_h3" />
+
+                <EditText
+                    android:id="@+id/update_name_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:inputType="text"
+                    android:text="" />
+            </LinearLayout>
 
 
         </TableRow>
@@ -69,19 +75,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/update_geotag"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/update_geotag"
-                android:textColor="@color/black"
-                android:textSize="@dimen/font_size_h3" />
-
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/update_geotag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/fragment_horizontal_margin"
+                    android:text="@string/update_geotag"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_size_h3" />
 
                 <TextView
                     android:id="@+id/update_geotag_textView"
@@ -104,43 +111,59 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/update_tags"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/update_tags"
-                android:textColor="@color/black"
-                android:textSize="@dimen/font_size_h3" />
-
-            <EditText
-                android:id="@+id/update_tags_editText"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="text"
-                android:text=""
-                android:autofillHints="" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/update_tags"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/fragment_horizontal_margin"
+                    android:text="@string/update_tags"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_size_h3" />
+
+                <EditText
+                    android:id="@+id/update_tags_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:inputType="text"
+                    android:text="" />
+            </LinearLayout>
+
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/update_date"
-                android:textColor="@color/black"
-                android:textSize="@dimen/font_size_h3" />
-
-            <EditText
-                android:id="@+id/update_date_editText"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="date"
-                android:text=""
-                android:autofillHints="" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/fragment_horizontal_margin"
+                    android:text="@string/update_date"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_size_h3" />
+
+                <EditText
+                    android:id="@+id/update_date_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:inputType="date"
+                    android:text="" />
+            </LinearLayout>
+
         </TableRow>
 
 

@@ -63,8 +63,7 @@ class NoteFragment : Fragment() {
             context?.let {
                 NoteDatabase.getInstance(it).deleteNote(note!!.ID.toInt())
             }
-            // TODO удалить из базы
-            Toast.makeText(context, "Note deleted", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(context, "Note deleted", Toast.LENGTH_SHORT).show()
 
             //val bundle = Bundle()
             //findNavController().navigate(R.id.action_nav_note_page_to_nav_update_note, bundle)
@@ -105,11 +104,11 @@ class NoteFragment : Fragment() {
 
     private fun getData(NoteID:String) {
         context?.let {
-            this.note = NoteDatabase.getInstance(it).getNoteById(NoteID.toLong())
+            this.note = NoteDatabase.getInstance(it).getNoteById(NoteID.toInt())
 
             if (this.note == null) {
                 this.note = MyNote(
-                    NoteID.toLong(),
+                    NoteID.toInt(),
                     "Неро $NoteID",
                     R.drawable.test.toString(),
                     "Какой-то geotag",
