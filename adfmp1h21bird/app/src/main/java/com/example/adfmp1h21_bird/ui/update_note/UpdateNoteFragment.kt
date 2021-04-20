@@ -70,7 +70,7 @@ class UpdateNoteFragment : Fragment() {
                     context?.resources?.getString(R.string.nav_note_update)
 
             getData(noteId)
-            image?.setImageResource(note!!.ImageURI.toInt())
+            image?.setImageURI(Uri.parse(note!!.ImageURI))
             name?.setText(note!!.name)
             geotag?.text = note!!.geotag
             tags?.setText(note!!.tags)
