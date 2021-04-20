@@ -20,7 +20,8 @@ class DatabaseTest {
         NoteDatabase.getInstance(context).clearDatabase()
         val note = MyNote(0,"1","2","3","4","5","6")
         note.ID = NoteDatabase.getInstance(context).addNote(note)
-        assertEquals(note, NoteDatabase.getInstance(context).getNoteById(note.ID))
+        // одинаковые объекты генерируют одинаковые строки
+        assertEquals(note.toString(), NoteDatabase.getInstance(context).getNoteById(note.ID).toString())
         NoteDatabase.getInstance(context).clearDatabase()
     }
 
