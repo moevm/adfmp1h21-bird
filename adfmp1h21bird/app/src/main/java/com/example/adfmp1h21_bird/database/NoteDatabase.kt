@@ -37,15 +37,19 @@ class NoteDatabase private constructor(context: Context){
         }
         return notes
     }
+
     // Картинку устанавливать так: imageView.setImageURI(Uri.fromFile(File(note.imageURI)))
     // Это говнокод, но вроде работает
     fun getNoteById(Id: Int): MyNote?{
         var note: MyNote? = null
+
+        var notes = getAllNotes()
+
         val cursor = helper.writableDatabase.rawQuery("SELECT * FROM ${helper.TABLE_NAME} WHERE _id = $Id", null)
         try{
             if (cursor.count > 0){
                 cursor.moveToFirst()
-                note = MyNote(cursor.getInt(0)
+              note = MyNote(cursor.getInt(0)
                         ,cursor.getString(1)
                         ,cursor.getString(2)
                         ,cursor.getString(3)
