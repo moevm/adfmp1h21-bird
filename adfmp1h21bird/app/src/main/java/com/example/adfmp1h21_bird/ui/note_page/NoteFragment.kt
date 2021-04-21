@@ -63,6 +63,7 @@ class NoteFragment : Fragment() {
             context?.let {
                 NoteDatabase.getInstance(it).deleteNote(note!!.ID.toInt())
             }
+            findNavController().popBackStack()
 //            Toast.makeText(context, "Note deleted", Toast.LENGTH_SHORT).show()
 
             //val bundle = Bundle()
