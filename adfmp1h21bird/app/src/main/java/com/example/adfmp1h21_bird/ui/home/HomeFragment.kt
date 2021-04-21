@@ -59,11 +59,11 @@ class HomeFragment : Fragment(), OnNoteClickListener {
         val birdList  = mutableListOf<NoteRecyclerViewItem>()
 
         context?.let {
-            var notes = NoteDatabase.getInstance(it).getAllNotes()
+            val notes = NoteDatabase.getInstance(it).getAllNotes()
 
             if (notes.isNotEmpty()) {
                 for (i in notes.indices) {
-                    var note = notes[i]
+                    val note = notes[i]
 
                     birdList.add(
                         NoteRecyclerViewItem(

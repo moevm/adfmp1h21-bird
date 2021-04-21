@@ -21,12 +21,12 @@ class NoteDatabase private constructor(context: Context){
                 cursor.moveToFirst()
                 do {
                     val note = MyNote(cursor.getInt(0)
-                            , cursor.getString(1)
-                            , cursor.getString(2)
-                            , cursor.getString(3)
-                            , cursor.getString(4)
-                            , cursor.getString(5)
-                            , cursor.getString(6))
+                                , cursor.getString(1)
+                                , cursor.getString(2)
+                                , cursor.getString(3)
+                                , cursor.getString(4)
+                                , cursor.getString(5)
+                                , cursor.getString(6))
                     notes.add(note)
                 } while (cursor.moveToNext())
             }
@@ -49,13 +49,13 @@ class NoteDatabase private constructor(context: Context){
         try{
             if (cursor.count > 0){
                 cursor.moveToFirst()
-              note = MyNote(cursor.getInt(0)
-                        ,cursor.getString(1)
-                        ,cursor.getString(2)
-                        ,cursor.getString(3)
-                        ,cursor.getString(4)
-                        ,cursor.getString(5)
-                        ,cursor.getString(6))
+                  note = MyNote(cursor.getInt(0)
+                            ,cursor.getString(1)
+                            ,cursor.getString(2)
+                            ,cursor.getString(3)
+                            ,cursor.getString(4)
+                            ,cursor.getString(5)
+                            ,cursor.getString(6))
             }
         }catch (e: Exception){
             e.printStackTrace()
