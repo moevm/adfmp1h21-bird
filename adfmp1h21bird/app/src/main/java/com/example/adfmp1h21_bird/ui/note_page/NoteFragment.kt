@@ -61,6 +61,7 @@ class NoteFragment : Fragment() {
             context?.let {
                 NoteDatabase.getInstance(it).deleteNote(noteId.toInt())
             }
+
             Toast.makeText(context, "Note deleted", Toast.LENGTH_SHORT).show()
 
             val bundle = Bundle()
