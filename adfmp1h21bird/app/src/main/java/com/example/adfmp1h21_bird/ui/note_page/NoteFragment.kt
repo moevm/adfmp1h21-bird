@@ -30,8 +30,6 @@ class NoteFragment : Fragment() {
     private lateinit var fabShare: FloatingActionButton
     private lateinit var fabDelete: FloatingActionButton
 
-    private var note: MyNote? = null
-
     private var isFABOpen:Boolean = false
 
     private lateinit var viewModel: NoteViewModel
@@ -61,13 +59,13 @@ class NoteFragment : Fragment() {
 
         fabDelete.setOnClickListener {
             context?.let {
-                NoteDatabase.getInstance(it).deleteNote(note!!.ID.toInt())
+                NoteDatabase.getInstance(it).deleteNote(noteId.toInt())
             }
-            findNavController().popBackStack()
-//            Toast.makeText(context, "Note deleted", Toast.LENGTH_SHORT).show()
 
-            //val bundle = Bundle()
-            //findNavController().navigate(R.id.action_nav_note_page_to_nav_update_note, bundle)
+            Toast.makeText(context, "Note deleted", Toast.LENGTH_SHORT).show()
+
+            val bundle = Bundle()
+            findNavController().navigate(R.id.action_nav_note_page_to_nav_home, bundle)
         }
 
         val name: TextView = rootView.findViewById(R.id.note_name_textView)
@@ -77,13 +75,13 @@ class NoteFragment : Fragment() {
         val comment: TextView = rootView.findViewById(R.id.note_comment_textView)
         val image: ImageView = rootView.findViewById(R.id.note_imageView)
 
-        getData(noteId)
+        val note = getData(noteId)
         name.text = note!!.name
         geotag.text = note!!.geotag
-        tags.text = note!!.tags
-        date.text = note!!.date
-        comment.text = note!!.comment
-        image.setImageURI(Uri.parse(note!!.ImageURI))
+        tags.text = note.tags
+        date.text = note.date
+        comment.text = note.comment
+        image.setImageURI(Uri.parse(note.ImageURI))
 
         val geotagButton: AppCompatImageButton = rootView.findViewById(R.id.note_geotag_button)
         geotagButton.setOnClickListener{
@@ -103,23 +101,23 @@ class NoteFragment : Fragment() {
     }
 
 
-    private fun getData(NoteID:String) {
-        context?.let {
-            this.note = NoteDatabase.getInstance(it).getNoteById(NoteID.toInt())
+    private fun getData(NoteID:String): MyNote? {
+        var note = NoteDatabase.getInstance(requireContext()).getNoteById(NoteID.toInt())
 
-            if (this.note == null) {
-                this.note = MyNote(
-                    NoteID.toInt(),
-                    "Неро $NoteID",
-                    R.drawable.test.toString(),
-                    "Какой-то geotag",
-                    "Птичка, днвочка, красная",
-                    "31.03.2077",
-                    "Суперптичка которую я увидел в Найт Сити, проезжая на своей тачке."
 
-                )
-            }
+        if (note == null) {
+            note = MyNote(
+                NoteID.toInt(),
+                "Неро $NoteID",
+                R.drawable.test.toString(),
+                "Какой-то geotag",
+                "Птичка, днвочка, красная",
+                "31.03.2077",
+                "Суперптичка которую я увидел в Найт Сити, проезжая на своей тачке."
+            )
         }
+
+        return note
     }
 
     private fun prepareFAB(rootView:View){
